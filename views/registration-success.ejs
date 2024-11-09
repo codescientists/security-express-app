@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Successful</title>
+    <link rel="stylesheet" href="/css/style.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: #333;
+        }
+
+        /* Success container styling */
+        .success-container {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            margin: 5rem auto;
+        }
+
+        /* Title styling */
+        .success-title {
+            font-size: 2rem;
+            color: #28a745;
+            margin-bottom: 1rem;
+        }
+
+        /* Success message styling */
+        .success-message {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 2rem;
+        }
+
+        /* Login link styling */
+        .login-link {
+            font-size: 1rem;
+            color: #2575fc;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            padding: 10px 20px;
+            border: 2px solid #2575fc;
+            border-radius: 4px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .login-link:hover {
+            background-color: #2575fc;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="success-container">
+        <h1 class="success-title">Registration Successful!</h1>
+        <p class="success-message">You have successfully registered. You can now log in to your account.</p>
+        <a href="/auth/login" class="login-link">Login here</a>
+    </div>
+</body>
+
+</html>

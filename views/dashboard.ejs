@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/css/dashboard.css"> <!-- Link to your CSS -->
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .dashboard-container {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .plan-info {
+            margin: 20px 0;
+            text-transform: capitalize;
+        }
+
+        .apiKey {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 10px;
+            font-size: 14px;
+            width: 70%;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <h1>Welcome, <%= user.username %>!</h1>
+        <p>Email: <%= user.email %>
+        </p>
+
+        <!-- Display the user's plan and API key -->
+        <div class="plan-info">
+            <p>
+                <% if (user.plan==='No plan' || user.endDate <=new Date() ) { %>
+                    <span>You don't have any active plan</span> - <a href="/plans">Purchase a new Plan</a>
+                    <% } else { %>
+                        Plan: <%= user.plan %>
+                            <br>
+                            <br>
+                            <% const endDate=new Date(user.endDate); %>
+                                Your Plan Ends on <%= endDate.toLocaleDateString('en-US', { year: 'numeric' ,
+                                    month: 'long' , day: 'numeric' }) %>
+
+                                    <% } %>
+            </p>
+            <% if (user.plan !=='No plan' && user.endDate>=new Date() ) { %>
+                <p style="text-align: start; margin-top: 30px;">Your API Key: <br></p>
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                    <span class="apiKey" id="api-key">
+                        <%= user.apiKey %>
+                    </span>
+                    <button onclick="copyApiKey()">COPY</button>
+                </div>
+                <% } %>
+        </div>
+
+        <!-- Logout button -->
+        <form action="/auth/logout" method="GET">
+            <button type="submit">LOGOUT</button>
+        </form>
+    </div>
+
+    <script>
+        // Function to copy API key to clipboard
+        function copyApiKey() {
+            const apiKey = document.getElementById('api-key').innerText;
+            navigator.clipboard.writeText(apiKey).then(() => {
+                alert('API Key copied to clipboard!');
+            });
+        }
+    </script>
+</body>
+
+</html>

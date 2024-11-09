@@ -1,0 +1,95 @@
+
+<!DOCTYPE html><html lang="en"><head>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-MWQHTL5');
+    </script>
+    <!-- End Google Tag Manager -->
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        if (window.location.href.endsWith('copilot-generate')) {
+          document.body.style.background = 'white';
+        }
+      });
+    </script>
+    <script src="https://raw.githubusercontent.com/davidjbradshaw/iframe-resizer/master/js/iframeResizer.contentWindow.min.js"></script>
+    <script>
+      //script to handle local storage being undefined in iframe when using incognito.
+      let storageOrUndefined;
+
+      try {
+        storageOrUndefined = window.localStorage;
+      } catch (e) {
+        storageOrUndefined = undefined;
+      }
+
+      if (!storageOrUndefined) {
+        const lsProxy = new Proxy(
+          {},
+          {
+            get: (_, prop, __) => (argument) => {
+              if (!storageOrUndefined) {
+                return null;
+              }
+
+              try {
+                return storageOrUndefined[prop](argument);
+              } catch (e) {
+                return null;
+              }
+            },
+          }
+        );
+
+        Object.defineProperty(window, 'localStorage', {
+          value: lsProxy,
+          configurable: true,
+          enumerable: true,
+          writable: false,
+        });
+      }
+    </script>
+    <meta charset="utf-8">
+    <title>Blink Workflow Library: 5K+ DevOps and SecOps Workflows</title>
+    <base href="/">
+    <meta name="slack-app-id" content="A03EX57MU9X">
+    <meta name="viewport" id="myViewport" content="width=device-width, initial-scale=1">
+    <script>
+      //disabling auto zoom for text inputs on iphone.
+      const isIPhone = /iPhone/.test(navigator.userAgent);
+      const isSafari =
+        navigator.vendor.match(/apple/i) &&
+        !navigator.userAgent.match(/crios/i) &&
+        !navigator.userAgent.match(/fxios/i) &&
+        !navigator.userAgent.match(/Opera|OPT\//);
+
+      if (isIPhone && isSafari) {
+        const mvp = document.getElementById('myViewport');
+        mvp.setAttribute('content', 'width=device-width, initial-scale=1, maximum-scale=1');
+      }
+    </script>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style>html{--color-dark-tooltip-2:#202227}html{--color-dark-tooltip-2:#202227}@font-face{font-family:Roboto;font-weight:400;font-style:normal;src:url(/assets/fonts/Roboto/Roboto-Regular.ttf) format("truetype")}@font-face{font-family:Roboto;font-weight:500;font-style:normal;src:url(/assets/fonts/Roboto/Roboto-Medium.ttf) format("truetype")}@font-face{font-family:Roboto;font-weight:700;font-style:normal;src:url(/assets/fonts/Roboto/Roboto-Bold.ttf) format("truetype")}html,body{font-family:Roboto,sans-serif;font-weight:400;color:var(--color-text-and-icons-1);background-color:var(--color-background-general);margin:0;padding:0;height:100%;transition:background-color 0s,color 0s}*{scrollbar-width:thin;scrollbar-color:var(--color-scrollbar-lift-general) var(--color-scrollbar-rail-general);transition:background-color 0s,color 0s,stroke 0s,fill 0s,border-color 0s}*::-webkit-scrollbar-thumb,*::-webkit-scrollbar-track{background-color:transparent;border-left:transparent;border-right:transparent}*:hover::-webkit-scrollbar-thumb{background:var(--color-stroke-6);border-left:2px solid var(--color-medium-tooltip-1);border-right:2px solid var(--color-medium-tooltip-1);border-radius:40px}*:hover::-webkit-scrollbar-track{background:var(--color-medium-tooltip-1)}:root{--ui-list-item-font-size:14px;--ui-list-item-font-weight:500;--ui-list-item-background:transparent;--ui-list-item-background-hover:styles.$variables-color-dark-tooltip-2;--ui-list-item-border-radius:8px}html{--color-dark-tooltip-2:#202227}:root{--input-color:var(--color-field-text-default-filled);--input-height:28px;--input-border-radius:calc(var(--sizes-radius-r-4-px) * 1px);--input-min-width:153px;--input-background:var(--input-default-background);--ui-dropdown-button-height:28px;--ui-dropdown-button-radius:calc(var(--sizes-radius-r-4-px) * 1px);--ui-dropdown-button-background:var(--input-default-background);--ui-chips-height:22px;--ui-chips-radius:calc(var(--sizes-radius-r-4-px) * 1px)}*,*:before,*:after{box-sizing:border-box}</style><link rel="stylesheet" href="styles.4d4250633a4bede1.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles.4d4250633a4bede1.css"></noscript></head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-MWQHTL5"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <al-root></al-root>
+  <script src="runtime.32aaf41a55889caa.js" type="module"></script><script src="polyfills.1cdbae06863a0fd0.js" type="module"></script><script src="main.845435b18b87de20.js" type="module"></script>
+
+</body></html>

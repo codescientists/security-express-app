@@ -1,0 +1,24 @@
+{
+  "name": "secure",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.21.1",
+    "express-session": "^1.18.1",
+    "mongoose": "^8.8.1",
+    "nodemon": "^3.1.7",
+    "paypal-rest-sdk": "^1.8.1",
+    "uuid": "^11.0.2"
+  }
+}
