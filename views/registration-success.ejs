@@ -14,17 +14,16 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background: linear-gradient(to right, #6a11cb, #2575fc);
             color: #333;
         }
 
         /* Success container styling */
         .success-container {
             background-color: #fff;
-            padding: 2rem;
+            padding: 4rem;
             border-radius: 8px;
             width: 100%;
-            max-width: 400px;
+            max-width: 500px;
             text-align: center;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             margin: 5rem auto;
@@ -32,9 +31,9 @@
 
         /* Title styling */
         .success-title {
-            font-size: 2rem;
-            color: #28a745;
-            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            color: #4e54c8;
+            margin-bottom: 1.4rem;
         }
 
         /* Success message styling */
@@ -47,18 +46,18 @@
         /* Login link styling */
         .login-link {
             font-size: 1rem;
-            color: #2575fc;
+            color: #000;
             text-decoration: none;
             font-weight: bold;
             display: inline-block;
             padding: 10px 20px;
-            border: 2px solid #2575fc;
+            border: 2px solid #000;
             border-radius: 4px;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         .login-link:hover {
-            background-color: #2575fc;
+            background-color: #000;
             color: #fff;
         }
     </style>
@@ -68,7 +67,7 @@
     <div class="success-container">
         <h1 class="success-title">Registration Successful!</h1>
         <p class="success-message">You have successfully registered. You can now log in to your account.</p>
-        <a href="/auth/login" class="login-link">Login here</a>
+        <a href="/auth/login" class="login-link">Login</a>
     </div>
 </body>
 

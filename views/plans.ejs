@@ -5,12 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Select a Plan</title>
-    <link rel="stylesheet" href="/css/plans.css">
+    <link rel="stylesheet" href="/css/style.css">
 
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f6f9;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -79,7 +78,7 @@
         }
 
         input:checked+.slider {
-            background-color: #4CAF50;
+            background-color: #1c3768;
         }
 
         input:checked+.slider:before {
@@ -98,10 +97,11 @@
         }
 
         .plan {
-            background-color: #fff;
+            background-color: #fafafa;
+            border: 1px solid #eaeaea;
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
             transition: transform 0.3s ease;
         }
 
@@ -114,7 +114,7 @@
         }
 
         .price {
-            font-size: 1.5em;
+            font-size: 1.1em;
             font-weight: bold;
             margin: 10px 0;
         }
@@ -128,78 +128,79 @@
             margin-top: 15px;
             padding: 10px 20px;
             color: #fff;
-            background-color: #4CAF50;
+            background-color: #1c3768;
             border: none;
             border-radius: 5px;
             text-decoration: none;
             font-weight: bold;
+            width: 100%;
             transition: background-color 0.3s ease;
         }
 
         .select-button:hover {
-            background-color: #45a049;
+            background-color: #284eb6;
         }
     </style>
 </head>
 
 <body>
     <div class="plans-container">
-        <h1>Choose Your Plan</h1>
-        <p>Select between Monthly and Yearly billing options.</p>
+        <h4 class="gradient-dark-text">Choose Your Plan</h1>
+            <p>Select between Monthly and Yearly billing options.</p>
 
-        <div class="toggle-switch">
-            <label>
-                <input type="checkbox" id="billingToggle" onclick="togglePlans()">
-                <span class="slider"></span>
-            </label>
-            <span id="billingText">Yearly</span>
-        </div>
-
-        <div class="plans" id="plansContainer">
-            <!-- Yearly Plans -->
-            <div class="plan yearly">
-                <h2>Starter</h2>
-                <p class="price">$199 / year</p>
-                <p class="description">Basic features for getting started.</p>
-                <a href="/plans/yearlyStarter" class="select-button">Select Plan</a>
+            <div class="toggle-switch">
+                <label>
+                    <input type="checkbox" id="billingToggle" onclick="togglePlans()">
+                    <span class="slider"></span>
+                </label>
+                <span id="billingText">Yearly</span>
             </div>
 
-            <div class="plan yearly">
-                <h2>Pro</h2>
-                <p class="price">$299 / year</p>
-                <p class="description">Advanced features for professionals.</p>
-                <a href="/plans/yearlyPro" class="select-button">Select Plan</a>
-            </div>
+            <div class="plans" id="plansContainer">
+                <!-- Yearly Plans -->
+                <div class="plan yearly">
+                    <h5>Starter</h5>
+                    <p class="price">$199 / year</p>
+                    <p class="description">Basic features for getting started.</p>
+                    <a href="/plans/yearlyStarter" class="select-button">Select Plan</a>
+                </div>
 
-            <div class="plan yearly">
-                <h2>Ultimate</h2>
-                <p class="price">$599 / year</p>
-                <p class="description">All features for growing businesses.</p>
-                <a href="/plans/yearlyUltimate" class="select-button">Select Plan</a>
-            </div>
+                <div class="plan yearly">
+                    <h5>Pro</h5>
+                    <p class="price">$299 / year</p>
+                    <p class="description">Advanced features for professionals.</p>
+                    <a href="/plans/yearlyPro" class="select-button">Select Plan</a>
+                </div>
 
-            <!-- Monthly Plans (Initially hidden) -->
-            <div class="plan monthly" style="display: none;">
-                <h2>Starter</h2>
-                <p class="price">$19 / month</p>
-                <p class="description">Basic features for getting started.</p>
-                <a href="/plans/monthlyStarter" class="select-button">Select Plan</a>
-            </div>
+                <div class="plan yearly">
+                    <h5>Ultimate</h5>
+                    <p class="price">$599 / year</p>
+                    <p class="description">All features for growing businesses.</p>
+                    <a href="/plans/yearlyUltimate" class="select-button">Select Plan</a>
+                </div>
 
-            <div class="plan monthly" style="display: none;">
-                <h2>Pro</h2>
-                <p class="price">$29 / month</p>
-                <p class="description">Advanced features for professionals.</p>
-                <a href="/plans/monthlyPro" class="select-button">Select Plan</a>
-            </div>
+                <!-- Monthly Plans (Initially hidden) -->
+                <div class="plan monthly" style="display: none;">
+                    <h5>Starter</h5>
+                    <p class="price">$19 / month</p>
+                    <p class="description">Basic features for getting started.</p>
+                    <a href="/plans/monthlyStarter" class="select-button">Select Plan</a>
+                </div>
 
-            <div class="plan monthly" style="display: none;">
-                <h2>Ultimate</h2>
-                <p class="price">$59 / month</p>
-                <p class="description">All features for growing businesses.</p>
-                <a href="/plans/monthlyUltimate" class="select-button">Select Plan</a>
+                <div class="plan monthly" style="display: none;">
+                    <h5>Pro</h5>
+                    <p class="price">$29 / month</p>
+                    <p class="description">Advanced features for professionals.</p>
+                    <a href="/plans/monthlyPro" class="select-button">Select Plan</a>
+                </div>
+
+                <div class="plan monthly" style="display: none;">
+                    <h5>Ultimate</h5>
+                    <p class="price">$59 / month</p>
+                    <p class="description">All features for growing businesses.</p>
+                    <a href="/plans/monthlyUltimate" class="select-button">Select Plan</a>
+                </div>
             </div>
-        </div>
     </div>
 
     <script>
